@@ -1,0 +1,6 @@
+{
+  "name": "Nuvio Gradient Studio — 3D WebGL Shader Generator",
+  "description": "Erstelle hardwarebeschleunigte 3D-Shader-Farbverläufe für deine Nuvio Collection mit 20+ Voreinstellungen, Textanimationen und Export als GIF, animiertes WebP und PNG.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

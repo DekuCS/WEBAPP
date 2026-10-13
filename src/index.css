@@ -1,0 +1,243 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.4);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Range input styling */
+input[type="range"] {
+  accent-color: #8b5cf6;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(18, 20, 29, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-subtle {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ========================================================== */
+/* SEPARATED TEXT ANIMATION KEYFRAMES                         */
+/* ========================================================== */
+
+@keyframes neon-pulse {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.8), 0 0 20px rgba(168, 85, 247, 0.5), 0 0 40px rgba(236, 72, 153, 0.4);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(168, 85, 247, 1), 0 0 35px rgba(236, 72, 153, 0.8), 0 0 60px rgba(236, 72, 153, 0.6);
+  }
+}
+
+@keyframes glitch-split {
+  0% { transform: translate(0); filter: drop-shadow(0 0 0 transparent); }
+  20% { transform: translate(-3px, 2px); filter: drop-shadow(3px -2px 0 rgba(255, 0, 100, 0.7)) drop-shadow(-3px 2px 0 rgba(0, 255, 255, 0.7)); }
+  40% { transform: translate(2px, -1px); filter: drop-shadow(-2px 1px 0 rgba(255, 0, 100, 0.7)) drop-shadow(2px -1px 0 rgba(0, 255, 255, 0.7)); }
+  60% { transform: translate(-1px, -2px); filter: drop-shadow(1px 2px 0 rgba(255, 0, 100, 0.7)) drop-shadow(-1px -2px 0 rgba(0, 255, 255, 0.7)); }
+  80% { transform: translate(3px, 1px); filter: drop-shadow(-3px -1px 0 rgba(255, 0, 100, 0.7)) drop-shadow(3px 1px 0 rgba(0, 255, 255, 0.7)); }
+  100% { transform: translate(0); filter: drop-shadow(0 0 0 transparent); }
+}
+
+@keyframes float-tilt {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-9px) rotate(0.8deg); }
+}
+
+@keyframes breathe-scale {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.035); }
+}
+
+@keyframes cinematic-drift {
+  0% { transform: translateY(0px) rotate(0deg) scale(1); }
+  50% { transform: translateY(-12px) rotate(-0.6deg) scale(1.025); }
+  100% { transform: translateY(0px) rotate(0deg) scale(1); }
+}
+
+@keyframes tracking-drift {
+  0%, 100% { letter-spacing: 0.05em; transform: scale(1); }
+  50% { letter-spacing: 0.16em; transform: scale(1.02); }
+}
+
+@keyframes neon-flicker {
+  0%, 18.99%, 22%, 62.99%, 64%, 64.99%, 70%, 100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 16px rgba(255,255,255,0.85));
+  }
+  19%, 21.99%, 63%, 63.99%, 65%, 69.99% {
+    opacity: 0.45;
+    filter: drop-shadow(0 0 4px rgba(255,255,255,0.2));
+  }
+}
+
+@keyframes cyber-scan {
+  0% { opacity: 0.92; }
+  48% { opacity: 0.92; }
+  50% { opacity: 0.35; }
+  52% { opacity: 1; }
+  70% { opacity: 0.92; }
+  72% { opacity: 0.55; }
+  74% { opacity: 0.98; }
+  100% { opacity: 0.92; }
+}
+
+@keyframes fluid-morph {
+  0%, 100% { transform: skewX(0deg) skewY(0deg) translateY(0); }
+  33% { transform: skewX(1.8deg) skewY(-0.8deg) translateY(-6px); }
+  66% { transform: skewX(-1.4deg) skewY(1.1deg) translateY(5px); }
+}
+
+@keyframes shimmer-flash {
+  0%, 100% { filter: brightness(1) drop-shadow(0 0 0px transparent); }
+  50% { filter: brightness(1.4) drop-shadow(0 0 25px rgba(255,255,255,0.7)); }
+}
+
+@keyframes chromatic-aberration {
+  0%, 100% {
+    text-shadow: 2.5px 0 0 rgba(255, 0, 100, 0.8), -2.5px 0 0 rgba(0, 240, 255, 0.8);
+  }
+  50% {
+    text-shadow: -3.5px 1px 0 rgba(255, 0, 100, 0.9), 3.5px -1px 0 rgba(0, 240, 255, 0.9);
+  }
+}
+
+@keyframes gradient-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes rainbow-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 15px rgba(255, 0, 128, 0.6)) drop-shadow(0 0 30px rgba(0, 255, 255, 0.4));
+  }
+  33% {
+    filter: drop-shadow(0 0 18px rgba(0, 255, 128, 0.7)) drop-shadow(0 0 35px rgba(255, 255, 0, 0.5));
+  }
+  66% {
+    filter: drop-shadow(0 0 20px rgba(0, 128, 255, 0.7)) drop-shadow(0 0 40px rgba(255, 0, 255, 0.6));
+  }
+}
+
+@keyframes gold-sweep {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes vaporwave-tube {
+  0%, 100% {
+    text-shadow: 0 0 8px #00f2fe, 0 0 20px #00f2fe, 0 0 40px #4facfe, 0 0 70px #ff0844;
+  }
+  50% {
+    text-shadow: 0 0 12px #ff0844, 0 0 28px #ff4e50, 0 0 50px #ff0844, 0 0 90px #00f2fe;
+  }
+}
+
+/* Motion Animation Classes */
+.anim-float-tilt {
+  animation: float-tilt 4s infinite ease-in-out;
+}
+
+.anim-breathe-scale {
+  animation: breathe-scale 3.5s infinite ease-in-out;
+}
+
+.anim-cinematic-drift {
+  animation: cinematic-drift 6s infinite ease-in-out;
+}
+
+.anim-tracking-drift {
+  animation: tracking-drift 5s infinite ease-in-out;
+}
+
+.anim-neon-flicker {
+  animation: neon-flicker 4s infinite linear;
+}
+
+.anim-glitch-split {
+  animation: glitch-split 1.8s infinite ease-in-out;
+}
+
+.anim-cyber-scan {
+  animation: cyber-scan 3s infinite steps(1, start);
+}
+
+.anim-fluid-morph {
+  animation: fluid-morph 5s infinite ease-in-out;
+}
+
+.anim-shimmer-flash {
+  animation: shimmer-flash 3.5s infinite ease-in-out;
+}
+
+.anim-gradient-flow {
+  animation: gradient-flow 5s infinite linear;
+}
+
+.anim-chromatic-aberration {
+  animation: chromatic-aberration 2.5s infinite ease-in-out;
+}
+
+.anim-neon-pulse {
+  animation: neon-pulse 2.5s infinite ease-in-out;
+}
+
+.anim-rainbow-flow {
+  animation: gradient-flow 5s infinite linear;
+}
+
+.anim-rainbow-pulse {
+  animation: gradient-flow 4s infinite linear, rainbow-pulse 3s infinite ease-in-out;
+}
+
+.anim-gold-sweep {
+  animation: gold-sweep 4s infinite ease-in-out;
+}
+
+.anim-vaporwave-tube {
+  animation: vaporwave-tube 3s infinite ease-in-out;
+}
+
+/* GPU Blend Mode Classes */
+.blend-difference {
+  mix-blend-mode: difference;
+}
+
+.blend-exclusion {
+  mix-blend-mode: exclusion;
+}
+
+.blend-color-dodge {
+  mix-blend-mode: color-dodge;
+}
+
+.blend-hard-light {
+  mix-blend-mode: hard-light;
+}
